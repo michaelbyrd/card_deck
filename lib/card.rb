@@ -32,4 +32,6 @@ class Card
   def greater_than?(card)
     rank_value > card.rank_value
   end # greater_than?
+
+  def ==(other)
 end # class Card

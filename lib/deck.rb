@@ -44,6 +44,10 @@ class Deck
     deck.size
   end # size
 
+  def shuffle
+    deck.shuffle
+  end #
+
   def cards_left
     size
   end # cards_left
