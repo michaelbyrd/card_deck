@@ -1,8 +1,11 @@
-require 'dealer'
+require 'hand'
 # Player class for blackjack
 class Player
+  attr_reader :hand
+  attr_writer :hand
+
   def initialize
-    @hand = []
+    @hand = Hand.new
     @bankroll = 100
   end # initialize
 

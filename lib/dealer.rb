@@ -1,16 +1,13 @@
-require 'player'
+require 'deck'
 
 # THIS ALSO NEEDS TO HAND OUT CHIPS
 class Dealer
   attr_reader :deck
+  attr_writer :deck
 
   def initialize
     @deck = Deck.new
   end # initialize
-
-  def deck
-    deck
-  end
 
   def deal_card(player)
     player.hand.add_card(deck.draw)

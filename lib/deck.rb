@@ -1,7 +1,8 @@
 require "card"
+
 # ruby -Ilib lib/deck.rb
 class Deck
-  
+
   attr_reader :deck
   attr_writer :deck
 
@@ -46,7 +47,7 @@ class Deck
   end # size
 
   def shuffle
-    deck.shuffle
+    deck.shuffle!
   end #
 
   def cards_left
