@@ -1,8 +1,7 @@
-require "card"
+require 'card'
 
 # ruby -Ilib lib/deck.rb
 class Deck
-
   attr_reader :deck
   attr_writer :deck
 

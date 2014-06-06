@@ -12,9 +12,9 @@ class Hand
 
   def value
     value = 0
-    for card in cards
+    cards.each do |card|
       value += card.rank_value
-    end # for
+    end # each do
     value
   end # value
 end # class Hand

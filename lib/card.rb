@@ -31,7 +31,7 @@ class Card
   end # run
 
   def make_hash
-    @hash = Hash.new { | hash, key| key }
+    @hash = Hash.new { | _hash, key| key }
     h = { A: 1, J: 11, Q: 12, K: 13 }
     @hash.merge!(h)
   end # make_hash
