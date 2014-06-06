@@ -1,20 +1,18 @@
 class Game
   def initialize
-    @player = Player.new
-    @house = Player.new
+    @players = []
     @dealer = Dealer.new
   end # initialize
 
-
+  def add_player
+    @players.push(Player.new)
+  end # add_player
 
   def start
-    # make number_of_player PLAYER(number_of_chips)
-    # DEAL to each player in players
-    #
+    @players.each do |player|
+      @dealer.deal_card(player)
+      @dealer.deal_card(player)
+    end # do each
   end # start
-
-  def round
-  end # round
-
 
 end # class Game

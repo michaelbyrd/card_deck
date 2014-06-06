@@ -2,29 +2,17 @@ require 'player'
 
 # THIS ALSO NEEDS TO HAND OUT CHIPS
 class Dealer
+  attr_reader :deck
 
   def initialize
     @deck = Deck.new
-    @players = nil
   end # initialize
 
-  def make_player
-
-  end # make_player
-
   def deck
-    @deck
+    deck
   end
 
-  def deal
-
-    # for each player in player deal
-    # possibly do not two in a row
-  end # end
-
-
-
-
-
-
+  def deal_card(player)
+    player.hand.add_card(deck.draw)
+  end # deal_card
 end # class Dealer

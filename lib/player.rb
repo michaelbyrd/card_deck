@@ -1,5 +1,5 @@
 require 'dealer'
-
+# Player class for blackjack
 class Player
   def initialize
     @hand = []
@@ -7,10 +7,10 @@ class Player
   end # initialize
 
   def play
-    if hand.total > 16
-      hit
+    if hand.value > 16
+      'hit'
     else
-      stay
+      'stay'
     end # if
   end # play
 end # class Player
