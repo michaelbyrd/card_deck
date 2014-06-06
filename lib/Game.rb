@@ -20,8 +20,8 @@ class Game
     players.each do |player|
       dealer.deal_card(player)
       dealer.deal_card(player)
-    end # do each
-  end # start
+    end # players.each do
+  end # shuffle_up_and_deal
 end # class Game
 
 g = Game.new
@@ -29,3 +29,6 @@ g.add_player
 g.add_player
 g.shuffle_up_and_deal
 puts g.players[0].hand.value
+g.players[0].hit?
+puts g.players[1].hand.value
+g.players[1].hit?

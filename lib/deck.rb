@@ -9,13 +9,13 @@ class Deck
     @values = nil
     @suits = nil
     @deck = []
-    run
+    build
   end # initialize
 
-  def run
+  def build
     make_arrays
     make_deck
-  end # run
+  end # build
 
   def make_arrays
     @values =

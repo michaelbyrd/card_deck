@@ -1,19 +1,21 @@
 require 'hand'
 # Player class for blackjack
 class Player
-  attr_reader :hand
-  attr_writer :hand
+  attr_reader :hand, :hit
+  attr_writer :hand, :hit
 
   def initialize
     @hand = Hand.new
     @bankroll = 100
+    @hit = true
   end # initialize
 
-  def play
-    if hand.value > 16
-      'hit'
+  def hit?
+    if hand.value <= 16
+      hit = true
     else
-      'stay'
+      hit = false
     end # if
-  end # play
+    puts hit
+  end # hit?
 end # class Player
