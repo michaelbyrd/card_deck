@@ -1,10 +1,9 @@
 require 'dealer'
 
 class Player
-  def initialize(hand, bankroll, strat) # strat = human or comp
-    @hand = hand
-    @bankroll = bankroll
-    @strat = strat
+  def initialize
+    @hand = []
+    @bankroll = 100
   end # initialize
 
   def play

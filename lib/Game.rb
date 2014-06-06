@@ -1,7 +1,11 @@
 class Game
-  def initialize(num_players)
-    @number_of_players = num_players
+  def initialize
+    @player = Player.new
+    @house = Player.new
+    @dealer = Dealer.new
   end # initialize
+
+
 
   def start
     # make number_of_player PLAYER(number_of_chips)

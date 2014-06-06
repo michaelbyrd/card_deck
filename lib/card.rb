@@ -1,19 +1,30 @@
-# class Card: Card is used in class Deck
 require 'pry'
 # n next
 # s step
 # f finish
 # c continue
-
+# class Card: Card is used in class Deck
 class Card
+  include Comparable
   attr_reader :rank, :suit
   attr_writer :rank, :suit
+
   def initialize(rank, suit)
     @rank = rank
     @suit = suit
     @hash = nil
     run
   end # initialize
+
+  def <=>(other)
+    if rank_value < other.rank_value
+      -1
+    elsif rank_value == other.rank_value
+      0
+    else
+      1
+    end # if
+  end # <=>(other)
 
   def run
     make_hash
@@ -29,9 +40,7 @@ class Card
     @hash[@rank]
   end # rank
 
-  def greater_than?(card)
-    rank_value > card.rank_value
+  def greater_than?(other_card)
+    self > other_card
   end # greater_than?
-
-  def ==(other)
 end # class Card

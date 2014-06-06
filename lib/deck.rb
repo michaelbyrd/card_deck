@@ -27,7 +27,7 @@ class Deck
     while count < 52
       v = count % 13
       s = (count / 13 % 4)
-      deck << Card.new(@values[v], @suits[s])
+      deck.push(Card.new(@values[v], @suits[s]))
       count += 1
     end # while
   end # make_deck
