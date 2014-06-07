@@ -31,13 +31,16 @@ class Deck
       deck.push(Card.new(@values[v], @suits[s]))
       count += 1
     end # while
+    shuffle
   end # make_deck
 
   def draw
-    if deck.size != 0
+    if deck.size > 0
       deck.shift
     else
-      nil
+      deck = Deck.new
+      deck.shuffle
+      draw
     end # if
   end # draw
 

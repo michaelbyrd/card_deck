@@ -2,9 +2,14 @@
 class Hand
   attr_reader :cards
   attr_writer :cards
+
   def initialize
     @cards = []
   end # initialize
+
+  def size
+    cards.size
+  end # size
 
   def add_card(card)
     cards.push(card)

@@ -15,20 +15,34 @@ class Game
     players.push(Player.new)
   end # add_player
 
-  def shuffle_up_and_deal
-    dealer.deck.shuffle
+  def deal_to_each_player
     players.each do |player|
       dealer.deal_card(player)
       dealer.deal_card(player)
     end # players.each do
-  end # shuffle_up_and_deal
+  end # deal_to_each_play
+
+  def do_players_hit
+    players.each do |player|
+      if player.hit?
+        dealer.deal_card(player)
+      end # is
+    end # each player do
+  end # do_players_hit
 end # class Game
 
 g = Game.new
 g.add_player
 g.add_player
-g.shuffle_up_and_deal
-puts g.players[0].hand.value
+g.deal_to_each_player
+
+
+print g.players[0].hand.value
 g.players[0].hit?
-puts g.players[1].hand.value
+print g.players[1].hand.value
+g.players[1].hit?
+g.do_players_hit
+print g.players[0].hand.value
+g.players[0].hit?
+print g.players[1].hand.value
 g.players[1].hit?
