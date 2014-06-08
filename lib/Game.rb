@@ -21,7 +21,6 @@ class Game
     players.each do |player|
       dealer.deal_card(player)
       dealer.deal_card(player)
-      puts player.hand.value
     end # players.each do
   end # deal_to_each_play
 
@@ -44,16 +43,33 @@ class Game
     end # if
   end # hit_player
 
+  def display_cards
+    players.each do |player|
+      if !player.human
+        message.dealer_showing(player)
+
+      else
+        # puts '------------ Your cards are: ------------'
+        # puts '-----------------------------------------'
+        # player.hand.cards.each do |card|
+        #   print card.to_s
+        #   print ' '
+        # end # do each card
+      end # if
+    end # do each player
+  end # display_cards
+
   def start
     message.welcome
-    add_player(true)
     add_player(false)
+    add_player(true)
     round
   end # start
 
   def round
     bet_from_each_player
     deal_to_each_player
+    display_cards
     do_players_hit
   end # round
 end # class Game

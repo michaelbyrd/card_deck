@@ -13,26 +13,30 @@ class Player
   end # initialize
 
   def bet
-    puts '---- How much would you like to bet? ----'
-    b = gets.to_i
-    puts '-----------------------------------------'
-    if @bankroll > b
-      @pool = b
-    else
-      puts 'You do not have enough chips, too bad'
+    if @human
+      puts '---- How much would you like to bet? ----'
+      puts '-----------------------------------------'
+      b = gets.to_i
+      puts '-----------------------------------------'
+      if @bankroll > b
+        @pool = b
+      else
+        puts 'You do not have enough chips, too bad'
+      end # if
     end # if
   end # bet
 
   def human_hit
-    puts '-----------------------------------------'
-    puts '--- Would you like to (H)it or (S)tay? --'
-    puts '-----------------------------------------'
     puts '------------ Your cards are: ------------'
+    puts '-----------------------------------------'
     hand.cards.each do |card|
       print card.to_s
       print ' '
-    end # each do
-
+    end # do each card
+    puts ' '
+    puts '-----------------------------------------'
+    puts '--- Would you like to (H)it or (S)tay? --'
+    puts '-----------------------------------------'
     if gets.chomp.downcase == 'h'
       @hit = true
     else

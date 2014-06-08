@@ -16,4 +16,11 @@ class Messages
     puts '--- Would you like to (H)it or (S)tay? --'
     puts '-----------------------------------------'
   end # hit_or_stay
+
+  def dealer_showing(player)
+    puts '--------- The dealer is showing ---------'
+    puts '-----------------------------------------'
+    puts player.hand.cards[0].to_s
+    puts '-----------------------------------------'
+  end # dealer_showing
 end # class Messages

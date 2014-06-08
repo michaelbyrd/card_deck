@@ -19,7 +19,7 @@ class Card
   def to_s
     print rank
     print ' '
-    print suit
+    print suit.capitalize
   end # to_s
 
   def <=>(other)
