@@ -16,6 +16,12 @@ class Card
     run
   end # initialize
 
+  def to_s
+    print rank
+    print ' '
+    print suit
+  end # to_s
+
   def <=>(other)
     if rank_value < other.rank_value
       -1

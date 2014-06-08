@@ -25,6 +25,12 @@ class Game
     end # players.each do
   end # deal_to_each_play
 
+  def bet_from_each_player
+    players.each do |player|
+      player.bet
+    end # each player bet
+  end # bet_from_each_player
+
   def do_players_hit
     players.each do |player|
       hit_player(player)
@@ -34,7 +40,6 @@ class Game
   def hit_player(player)
     if player.hit?
       dealer.deal_card(player)
-      puts player.hand.value
       hit_player(player)
     end # if
   end # hit_player
@@ -47,6 +52,7 @@ class Game
   end # start
 
   def round
+    bet_from_each_player
     deal_to_each_player
     do_players_hit
   end # round
@@ -54,16 +60,3 @@ end # class Game
 
 g = Game.new
 g.start
-
-# g.message.welcome
-# g.add_player(true)
-# g.add_player(false)
-# g.deal_to_each_player
-#
-# puts g.players[0].hand.value
-# puts g.players[1].hand.value
-#
-# g.do_players_hit
-#
-# puts g.players[0].hand.value
-# puts g.players[1].hand.value
